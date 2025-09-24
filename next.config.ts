@@ -1,11 +1,16 @@
-module.exports = {
-  // Configure the base path and asset prefix to reflect the mount path of your environment
-  // For example, if your app is mounted at /app, set basePath and assetPrefix to '/app'
-  basePath: '/app',
-  assetPrefix: '/app',
-  
-  // Additional Next.js configuration options can be added here
-  // For example:
-  // output: 'standalone',
-  // reactStrictMode: true,
-}
+import type { NextConfig } from "next";
+import userConfig from "./cosmicuser.next.config";
+
+const webflowOverrides: NextConfig = {
+  basePath: "/app",
+};
+
+const nextConfig: NextConfig = {
+  ...userConfig,
+  ...webflowOverrides,
+};
+
+export default nextConfig;
+// added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
