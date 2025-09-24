@@ -1,13 +1,7 @@
 import type { NextConfig } from "next";
-import userConfig from "./cosmicuser.next.config";
-
-const webflowOverrides: NextConfig = {
-  basePath: "/app",
-};
 
 const nextConfig: NextConfig = {
-  ...userConfig,
-  ...webflowOverrides,
+  basePath: "/app",
 };
 
 export default nextConfig;
