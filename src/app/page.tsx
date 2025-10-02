@@ -23,6 +23,7 @@ export default function Home() {
         }
       });
       const data = await response.json() as JokeResponse;
+      console.log('data: ', data);
       if (data.joke) {
         setCurrentJoke(data.joke);
       }
