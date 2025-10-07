@@ -29,5 +29,5 @@ export const authOptions: NextAuthOptions = {
     strategy: "jwt",
   },
   // For Cloudflare compatibility
-  secret: process.env.NEXTAUTH_SECRET,
+  //secret: process.env.NEXTAUTH_SECRET,
 }
