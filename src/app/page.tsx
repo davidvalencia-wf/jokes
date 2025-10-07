@@ -111,24 +111,33 @@ export default function Home() {
           )}
         </div>
 
-        {/* Refresh Button */}
-        <button
-          onClick={() => {
-            fetchJoke();
-            setRating(0); // Reset rating for new joke
-          }}
-          disabled={isLoading}
-          className="mt-8 bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl border border-blue-500 hover:border-blue-400 disabled:border-blue-700"
-        >
-          {isLoading ? (
-            <div className="flex items-center space-x-2">
-              <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-              <span>Getting Joke...</span>
-            </div>
-          ) : (
-            "Get Another Joke! 🎲"
-          )}
-        </button>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+          <button
+            onClick={() => {
+              fetchJoke();
+              setRating(0); // Reset rating for new joke
+            }}
+            disabled={isLoading}
+            className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl border border-blue-500 hover:border-blue-400 disabled:border-blue-700"
+          >
+            {isLoading ? (
+              <div className="flex items-center space-x-2">
+                <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                <span>Getting Joke...</span>
+              </div>
+            ) : (
+              "Get Another Joke! 🎲"
+            )}
+          </button>
+          
+          <a
+            href="/app/auth/signin"
+            className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl border border-green-500 hover:border-green-400"
+          >
+            Sign In to Dashboard 🔐
+          </a>
+        </div>
       </div>
     </div>
   );
