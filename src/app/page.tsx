@@ -132,6 +132,13 @@ export default function Home() {
           </button>
           
           <a
+            href="/app/add-jokes"
+            className="bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl border border-purple-500 hover:border-purple-400"
+          >
+            Add Your Jokes 📝
+          </a>
+          
+          <a
             href="/app/auth/signin"
             className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl border border-green-500 hover:border-green-400"
           >
