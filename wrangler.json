@@ -3,12 +3,20 @@
   "name": "nextjs",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-03-01",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": ["nodejs_compat", "enable_nodejs_http_modules"],
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets"
   },
   "observability": {
     "enabled": true
+  },
+  "d1_databases": [
+  {
+    "binding": "DB", // A valid JavaScript variable name
+    "database_name": "djokes_db",
+    "database_id": "1234", // Webflow Cloud will generate this for you once you deploy your app
+    "migrations_dir": "drizzle" // We'll create this directory later
   }
+]
 }

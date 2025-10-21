@@ -9,9 +9,12 @@
     "lint": "next lint",
     "deploy": "webflow cloud deploy",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:apply:local": "wrangler d1 migrations apply DB --local"
   },
   "dependencies": {
+    "drizzle-orm": "^0.44.6",
     "next": "15.2.5",
     "next-auth": "^4.24.11",
     "react": "^19.0.0",
@@ -25,10 +28,13 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "better-sqlite3": "^12.4.1",
+    "drizzle-kit": "^0.31.5",
     "eslint": "^9",
     "eslint-config-next": "15.2.5",
     "postcss-import": "^16.1.0",
     "tailwindcss": "^4",
+    "tsx": "^4.20.6",
     "typescript": "^5",
     "wrangler": "^4.11.1"
   }
