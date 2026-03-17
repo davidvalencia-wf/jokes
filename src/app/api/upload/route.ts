@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
 
   const uploaded: { key: string; size: number; type: string }[] = [];
 
-  for (const [fieldName, value] of formData.entries()) {
+  for (const [, value] of formData.entries()) {
     if (!(value instanceof File)) continue;
 
     const file = value as File;
