@@ -6,8 +6,8 @@ interface CloudflareEnv {
 }
 
 export async function POST(request: NextRequest) {
-  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
-  const r2 = env.R2;
+  const { env } = await getCloudflareContext({ async: true });
+  const r2 = (env as unknown as CloudflareEnv).R2;
 
   if (!r2) {
     return NextResponse.json({ error: 'R2 storage not available' }, { status: 500 });
