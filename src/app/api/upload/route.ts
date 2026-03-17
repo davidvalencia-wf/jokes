@@ -1,9 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 
+interface CloudflareEnv {
+  R2: R2Bucket;
+}
+
 export async function POST(request: NextRequest) {
-  const { env } = await getCloudflareContext({ async: true });
-  const r2 = env.R2 as R2Bucket | undefined;
+  const { env } = await getCloudflareContext<CloudflareEnv>({ async: true });
+  const r2 = env.R2;
 
   if (!r2) {
     return NextResponse.json({ error: 'R2 storage not available' }, { status: 500 });
