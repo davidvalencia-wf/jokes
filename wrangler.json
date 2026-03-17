@@ -18,5 +18,11 @@
     "database_id": "1234", // Webflow Cloud will generate this for you once you deploy your app
     "migrations_dir": "drizzle" // We'll create this directory later
   }
+],
+"r2_buckets": [
+  {
+    "binding": "R2",
+    "bucket_name": "my-bucket"
+  }
 ]
 }
